@@ -72,6 +72,88 @@
             font-size: 0.9em;
             color: #666;
         }
+        
+        /* Tab Navigation Styles */
+        .tab-navigation {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 30px 0 0;
+            padding: 0;
+            list-style: none;
+            border-bottom: 2px solid #0066cc;
+        }
+        
+        .tab-navigation li {
+            margin-right: 5px;
+        }
+        
+        .tab-navigation li a {
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            background-color: #f5f5f5;
+            color: #333;
+            border-radius: 5px 5px 0 0;
+            transition: all 0.3s ease;
+        }
+        
+        .tab-navigation li a:hover {
+            background-color: #e0e0e0;
+        }
+        
+        .tab-navigation li a.active {
+            background-color: #0066cc;
+            color: white;
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-top: none;
+            margin-bottom: 30px;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        /* Quick Nav Buttons */
+        .quick-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+        
+        .quick-nav button {
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            padding: 8px 15px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+        
+        .quick-nav button:hover {
+            background-color: #e0e0e0;
+        }
+        
+        /* For smaller screens */
+        @media (max-width: 600px) {
+            .tab-navigation {
+                flex-direction: column;
+            }
+            
+            .tab-navigation li {
+                margin-right: 0;
+                margin-bottom: 5px;
+            }
+            
+            .tab-navigation li a {
+                border-radius: 5px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -79,76 +161,129 @@
         <h1>Open Voice-Chat Agentic Model Design, Evaluation and Benchmarking</h1>
         <p>Special Session at IEEE ASRU 2025</p>
     </div>
-
-    <div class="submission-section">
-        <h2>Paper Submission</h2>
-        <p>Submit your paper to this special session through the IEEE ASRU 2025 submission system:</p>
-        <a href="https://cmt3.research.microsoft.com/IEEEASRU2025/Track/1/Submission/Create" class="submission-button">Submit Your Paper</a>
-    </div>
-
-    <h2>Organizers and Contact Information</h2>
-    <div class="organizer">
-        <p><strong>Dr. Huck Yang</strong> – Senior Research Scientist, NVIDIA Research</p>
-        <p>Email: huckyang@nvidia.com</p>
-    </div>
-    <div class="organizer">
-        <p><strong>Prof. Yun-Nung (Vivian) Chen</strong> – Professor, Department of Computer Science & Information Engineering, National Taiwan University</p>
-        <p>Email: y.v.chen@ieee.org</p>
-    </div>
-    <div class="organizer">
-        <p><strong>Prof. Larry Heck</strong> – Professor (ECE & Interactive Computing), Georgia Institute of Technology; Georgia Research Alliance Eminent Scholar</p>
-        <p>Email: larryheck@gatech.edu</p>
-    </div>
-
-    <h2>Organizer Biographies</h2>
-    <div class="bio">
-        <h3>Dr. Huck Yang</h3>
-        <p>Dr. Huck Yang is a Senior Research Scientist at NVIDIA Research focusing on speech-language cross-modal alignment with several representative works on input-based model adaptation (i.e., speech-based in-context learning, textual prompting, and system reprogramming.) He received his Ph.D. from the Georgia Institute of Technology and has served as an area chair or committee member on parameter-efficient learning at IEEE ICASSP 2022 to 2025, EMNLP 2024 and ACL 2025​. Dr. Yang has organized special sessions and tutorials in Interspeech 2023, ICASSP 2022 to 2024, and EMNLP 2025.</p>
-    </div>
-    <div class="bio">
-        <h3>Prof. Yun-Nung (Vivian) Chen</h3>
-        <p>Prof. Yun-Nung (Vivian) Chen is a Professor in the Department of Computer Science and Information Engineering at National Taiwan University, specializing in spoken dialogue systems, language understanding, and multimodal language processing. She earned her Ph.D. from Carnegie Mellon University. She leads the MiU Lab at NTU, has published extensively on conversational AI, and her expertise in dialog system evaluation and user-centric AI design will inform the session's focus on benchmarking conversational agents.</p>
-    </div>
-    <div class="bio">
-        <h3>Prof. Larry Heck</h3>
-        <p>Prof. Larry Heck is a Professor with joint appointments in Electrical & Computer Engineering and Interactive Computing at the Georgia Institute of Technology, and holds the Rhesa S. Farmer Chair of Advanced Computing Concepts as a Georgia Research Alliance Eminent Scholar​. An IEEE Fellow, Prof. Prof. Heck's unparalleled industry experience in creating and evaluating voice assistants makes him ideally suited to co-organize this special session on voice-agent benchmarking.</p>
-    </div>
-
-    <h2>Session Overview</h2>
-    <p>This special session aims to foster the design of open voice-chat agentic systems and the definition of evaluation benchmarks for such agents. Recent advances in speech technology and large language models (LLMs) have enabled voice-based conversational agents that can engage in free-form dialogue and carry out complex tasks. However, the field currently lacks well-defined tasks and standardized metrics to evaluate these multimodal dialogue systems' performance​.</p>
-
-    <h2>Objectives</h2>
-    <p>The primary objective is to define and accelerate the development of open evaluation frameworks for voice-interactive AI agents.</p>
-
-    <h2>Key Topics and Subtopics</h2>
-    <p>To structure the session, we will focus on several interconnected subtopics, each crucial for establishing comprehensive benchmarks for voice-chat agents:</p>
     
-    <div class="topic">
-        <h3>Voice-Chat Model Design</h3>
-        <p>Neural network model design for voice-chat function and tasks.</p>
+    <!-- Tab Navigation -->
+    <ul class="tab-navigation">
+        <li><a href="#overview" class="active">Overview</a></li>
+        <li><a href="#organizers">Organizers</a></li>
+        <li><a href="#biographies">Biographies</a></li>
+        <li><a href="#topics">Topics</a></li>
+        <li><a href="#format">Format</a></li>
+        <li><a href="#impact">Impact</a></li>
+    </ul>
+    
+    <!-- Overview Tab -->
+    <div id="overview" class="tab-content active">
+        <h2>Session Overview</h2>
+        <p>This special session aims to foster the design of open voice-chat agentic systems and the definition of evaluation benchmarks for such agents. Recent advances in speech technology and large language models (LLMs) have enabled voice-based conversational agents that can engage in free-form dialogue and carry out complex tasks. However, the field currently lacks well-defined tasks and standardized metrics to evaluate these multimodal dialogue systems' performance​.</p>
+
+        <h2>Objectives</h2>
+        <p>The primary objective is to define and accelerate the development of open evaluation frameworks for voice-interactive AI agents.</p>
+        
+        <div class="quick-nav">
+            <button class="prev-tab" disabled>Previous</button>
+            <button class="next-tab" data-next="organizers">Next: Organizers</button>
+        </div>
+    </div>
+    
+    <!-- Organizers Tab -->
+    <div id="organizers" class="tab-content">
+        <h2>Organizers and Contact Information</h2>
+        <div class="organizer">
+            <p><strong>Dr. Huck Yang</strong> – Senior Research Scientist, NVIDIA Research</p>
+            <p>Email: huckyang@nvidia.com</p>
+        </div>
+        <div class="organizer">
+            <p><strong>Prof. Yun-Nung (Vivian) Chen</strong> – Professor, Department of Computer Science & Information Engineering, National Taiwan University</p>
+            <p>Email: y.v.chen@ieee.org</p>
+        </div>
+        <div class="organizer">
+            <p><strong>Prof. Larry Heck</strong> – Professor (ECE & Interactive Computing), Georgia Institute of Technology; Georgia Research Alliance Eminent Scholar</p>
+            <p>Email: larryheck@gatech.edu</p>
+        </div>
+        
+        <div class="quick-nav">
+            <button class="prev-tab" data-prev="overview">Previous: Overview</button>
+            <button class="next-tab" data-next="biographies">Next: Biographies</button>
+        </div>
+    </div>
+    
+    <!-- Biographies Tab -->
+    <div id="biographies" class="tab-content">
+        <h2>Organizer Biographies</h2>
+        <div class="bio">
+            <h3>Dr. Huck Yang</h3>
+            <p>Dr. Huck Yang is a Senior Research Scientist at NVIDIA Research focusing on speech-language cross-modal alignment with several representative works on input-based model adaptation (i.e., speech-based in-context learning, textual prompting, and system reprogramming.) He received his Ph.D. from the Georgia Institute of Technology and has served as an area chair or committee member on parameter-efficient learning at IEEE ICASSP 2022 to 2025, EMNLP 2024 and ACL 2025​. Dr. Yang has organized special sessions and tutorials in Interspeech 2023, ICASSP 2022 to 2024, and EMNLP 2025.</p>
+        </div>
+        <div class="bio">
+            <h3>Prof. Yun-Nung (Vivian) Chen</h3>
+            <p>Prof. Yun-Nung (Vivian) Chen is a Professor in the Department of Computer Science and Information Engineering at National Taiwan University, specializing in spoken dialogue systems, language understanding, and multimodal language processing. She earned her Ph.D. from Carnegie Mellon University. She leads the MiU Lab at NTU, has published extensively on conversational AI, and her expertise in dialog system evaluation and user-centric AI design will inform the session's focus on benchmarking conversational agents.</p>
+        </div>
+        <div class="bio">
+            <h3>Prof. Larry Heck</h3>
+            <p>Prof. Larry Heck is a Professor with joint appointments in Electrical & Computer Engineering and Interactive Computing at the Georgia Institute of Technology, and holds the Rhesa S. Farmer Chair of Advanced Computing Concepts as a Georgia Research Alliance Eminent Scholar​. An IEEE Fellow, Prof. Prof. Heck's unparalleled industry experience in creating and evaluating voice assistants makes him ideally suited to co-organize this special session on voice-agent benchmarking.</p>
+        </div>
+        
+        <div class="quick-nav">
+            <button class="prev-tab" data-prev="organizers">Previous: Organizers</button>
+            <button class="next-tab" data-next="topics">Next: Topics</button>
+        </div>
+    </div>
+    
+    <!-- Topics Tab -->
+    <div id="topics" class="tab-content">
+        <h2>Key Topics and Subtopics</h2>
+        <p>To structure the session, we will focus on several interconnected subtopics, each crucial for establishing comprehensive benchmarks for voice-chat agents:</p>
+        
+        <div class="topic">
+            <h3>Voice-Chat Model Design</h3>
+            <p>Neural network model design for voice-chat function and tasks.</p>
+        </div>
+
+        <div class="topic">
+            <h3>Real-Time Agent Evaluation</h3>
+            <p>Metrics and methods for measuring system latency, turn-taking speed, and real-time interaction quality.</p>
+        </div>
+
+        <div class="topic">
+            <h3>Benchmarking Frameworks for Voice-Chat Systems</h3>
+            <p>Design of open benchmarks and evaluation toolkits that cover the voice-chat capabilities of modern chat agents (speech, text, and possibly vision).</p>
+        </div>
+
+        <div class="topic">
+            <h3>Integration of Speech Models with LLMs</h3>
+            <p>Strategies for large language models to create agentic conversational AI. This topic covers how to evaluate the combined system.</p>
+        </div>
+        
+        <div class="quick-nav">
+            <button class="prev-tab" data-prev="biographies">Previous: Biographies</button>
+            <button class="next-tab" data-next="format">Next: Format</button>
+        </div>
+    </div>
+    
+    <!-- Format Tab -->
+    <div id="format" class="tab-content">
+        <h2>Session Format</h2>
+        <p>The session will be organized as a sequence of invited talks and paper presentations, followed by an interactive panel discussion. We plan to feature 6 to 8 contributed papers (selected via peer review of this special session's submissions). Each paper will present either a novel voice-chat model design, voice-chat task, evaluation methodology, a benchmarking dataset, or an implemented system related to the session theme.</p>
+        
+        <div class="quick-nav">
+            <button class="prev-tab" data-prev="topics">Previous: Topics</button>
+            <button class="next-tab" data-next="impact">Next: Impact</button>
+        </div>
+    </div>
+    
+    <!-- Impact Tab -->
+    <div id="impact" class="tab-content">
+        <h2>Expected Impact</h2>
+        <p>By defining currently undefined tasks and metrics for voice-chat agents, this special session will lay the groundwork for standardized evaluations in our community. In the long term, having common benchmarks will accelerate progress by enabling researchers to compare systems directly and track improvements over time. We expect lively participation from both academic researchers and industrial practitioners (e.g., teams working on digital assistants and customer service bots), fostering collaborations that bridge speech and language disciplines. Ultimately, this session aligns with IEEE ASRU's goal of advancing speech understanding technologies: it will help answer "How do we know if one conversational system is better than another?" in a rigorous way. Establishing these evaluation criteria and benchmarks now will shape research and development of next-generation conversational AI that is more accurate, real-time, privacy-preserving, and robust in the open world.</p>
+        
+        <div class="quick-nav">
+            <button class="prev-tab" data-prev="format">Previous: Format</button>
+            <button class="next-tab" disabled>Next</button>
+        </div>
     </div>
 
-    <div class="topic">
-        <h3>Real-Time Agent Evaluation</h3>
-        <p>Metrics and methods for measuring system latency, turn-taking speed, and real-time interaction quality.</p>
-    </div>
-
-    <div class="topic">
-        <h3>Benchmarking Frameworks for Voice-Chat Systems</h3>
-        <p>Design of open benchmarks and evaluation toolkits that cover the voice-chat capabilities of modern chat agents (speech, text, and possibly vision).</p>
-    </div>
-
-    <div class="topic">
-        <h3>Integration of Speech Models with LLMs</h3>
-        <p>Strategies for large language models to create agentic conversational AI. This topic covers how to evaluate the combined system.</p>
-    </div>
-
-    <h2>Session Format</h2>
-    <p>The session will be organized as a sequence of invited talks and paper presentations, followed by an interactive panel discussion. We plan to feature 6 to 8 contributed papers (selected via peer review of this special session's submissions). Each paper will present either a novel voice-chat model design, voice-chat task, evaluation methodology, a benchmarking dataset, or an implemented system related to the session theme.</p>
-
-    <h2>Expected Impact</h2>
-    <p>By defining currently undefined tasks and metrics for voice-chat agents, this special session will lay the groundwork for standardized evaluations in our community. In the long term, having common benchmarks will accelerate progress by enabling researchers to compare systems directly and track improvements over time. We expect lively participation from both academic researchers and industrial practitioners (e.g., teams working on digital assistants and customer service bots), fostering collaborations that bridge speech and language disciplines. Ultimately, this session aligns with IEEE ASRU's goal of advancing speech understanding technologies: it will help answer "How do we know if one conversational system is better than another?" in a rigorous way. Establishing these evaluation criteria and benchmarks now will shape research and development of next-generation conversational AI that is more accurate, real-time, privacy-preserving, and robust in the open world.</p>
-
+    <!-- Submission Section - Kept as a single block at the bottom -->
     <div class="submission-section">
         <h2>Submit Your Paper</h2>
         <p>We invite researchers and practitioners to submit their work on voice-chat agentic models, evaluation methods, and benchmarking frameworks.</p>
@@ -158,5 +293,53 @@
     <div class="footer">
         <p>&copy; 2025 IEEE Automatic Speech Recognition and Understanding Workshop</p>
     </div>
+    
+    <!-- JavaScript for Tab Functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tab switching functionality
+            const tabLinks = document.querySelectorAll('.tab-navigation a');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Get the target tab
+                    const targetId = this.getAttribute('href');
+                    
+                    // Remove active class from all tabs
+                    tabLinks.forEach(tab => tab.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Add active class to clicked tab
+                    this.classList.add('active');
+                    document.querySelector(targetId).classList.add('active');
+                });
+            });
+            
+            // Next/Previous buttons functionality
+            const nextButtons = document.querySelectorAll('.next-tab');
+            const prevButtons = document.querySelectorAll('.prev-tab');
+            
+            nextButtons.forEach(button => {
+                if (!button.hasAttribute('disabled')) {
+                    button.addEventListener('click', function() {
+                        const nextTabId = this.getAttribute('data-next');
+                        document.querySelector(`a[href="#${nextTabId}"]`).click();
+                    });
+                }
+            });
+            
+            prevButtons.forEach(button => {
+                if (!button.hasAttribute('disabled')) {
+                    button.addEventListener('click', function() {
+                        const prevTabId = this.getAttribute('data-prev');
+                        document.querySelector(`a[href="#${prevTabId}"]`).click();
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html> 
