@@ -24,15 +24,15 @@
         }
         
         [data-theme="dark"] {
-            /* Dark mode colors */
+            /* Dark mode colors - changed blue to orange */
             --bg-color: #121212;
             --text-color: #e0e0e0;
-            --header-color: #4d9fff;
+            --header-color: #ff7b00;
             --border-color: #333333;
             --card-bg: #1e1e1e;
             --tab-bg: #2d2d2d;
             --tab-hover: #3a3a3a;
-            --tab-active-bg: #4d9fff;
+            --tab-active-bg: #ff7b00;
             --tab-active-text: #ffffff;
             --button-bg: #2d2d2d;
             --button-hover: #3a3a3a;
@@ -106,6 +106,10 @@
             background-color: #004999;
         }
         
+        [data-theme="dark"] .submission-button:hover {
+            background-color: #ff9933;
+        }
+        
         .submission-section {
             text-align: center;
             margin: 40px 0;
@@ -125,11 +129,10 @@
         
         /* Theme Toggle Switch */
         .theme-switch-wrapper {
-            position: absolute;
-            top: 20px;
-            right: 10px;
             display: flex;
             align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
         }
         
         .theme-switch {
@@ -276,10 +279,6 @@
             }
             
             .theme-switch-wrapper {
-                position: relative;
-                top: 0;
-                right: 0;
-                justify-content: center;
                 margin: 10px 0;
             }
             
